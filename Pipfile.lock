@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "69c2b0d2c7fd351f15eaeb9660124f2fc8e36c2540da428ed19faaff6df1f3a9"
+            "sha256": "271c267e9a1b78d9561485b7ecd484d8de55da1efc8645b67c6d6327f2f1f5e8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -61,6 +61,13 @@
         "django-hijack": {
             "hashes": [
                 "sha256:be484f0ca67a092d5bf9bf8a5307beb716dc2e86b56a69796479183fdeb9036c"
+            ],
+            "index": "pypi",
+            "version": "==2.1.10"
+        },
+        "django-hijack-admin": {
+            "hashes": [
+                "sha256:330f9be331ada831248c9cee5a21202aea70fb9911b443249ce4c28d57d9e2e3"
             ],
             "index": "pypi",
             "version": "==2.1.10"

@@ -67,6 +67,9 @@ INSTALLED_APPS = [
     # django-hijack
     'hijack',
     'compat',
+
+    # django-hijack-admin
+    'hijack_admin'
 ]
 
 MIDDLEWARE = [
@@ -160,3 +163,7 @@ HIJACK_LOGIN_REDIRECT_URL = '/dashboard/'  # Where admins are redirected to afte
 HIJACK_LOGOUT_REDIRECT_URL = '/admin/auth/user/'  # Where admins are redirected to after releasing a user
 
 HIJACK_USE_BOOTSTRAP = True
+
+HIJACK_ALLOW_GET_REQUESTS = True
+
+SITE_ID = 1
