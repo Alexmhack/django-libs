@@ -13,6 +13,7 @@ django-debug-toolbar = "*"
 django-axes = "*"
 django-compressor = "*"
 django-admin-honeypot = "*"
+python-decouple = "*"
 
 [dev-packages]
 
