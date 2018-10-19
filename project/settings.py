@@ -87,6 +87,9 @@ INSTALLED_APPS = [
 
     # django-admin-honeypot
     'admin_honeypot',
+
+    # django-private-chat
+    'django_private_chat',
 ]
 
 MIDDLEWARE = [
@@ -225,3 +228,10 @@ EMAIL_HOST_USER = config('EMAIL_ID')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASS')
 EMAIL_PORT = 465
 EMAIL_USE_TLS = True
+
+
+# django-private-chat
+
+CHAT_WS_SERVER_HOST = 'localhost'
+CHAT_WS_SERVER_PORT = 5002
+CHAT_WS_SERVER_PROTOCOL = 'ws'

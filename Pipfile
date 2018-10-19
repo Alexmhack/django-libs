@@ -14,6 +14,9 @@ django-axes = "*"
 django-compressor = "*"
 django-admin-honeypot = "*"
 python-decouple = "*"
+django-ipware = "*"
+django-mail-admin = "*"
+django-private-chat = "*"
 
 [dev-packages]
 

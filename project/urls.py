@@ -29,3 +29,8 @@ urlpatterns += [
 urlpatterns += [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
 ]
+
+# django-private-chat urls
+urlpatterns += [
+    path('', include('django_private_chat.urls')),
+]
