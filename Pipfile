@@ -9,6 +9,9 @@ django-jet = "*"
 django-allauth = "*"
 django-hijack = "*"
 django-hijack-admin = "*"
+django-debug-toolbar = "*"
+django-axes = "*"
+django-compressor = "*"
 
 [dev-packages]
 

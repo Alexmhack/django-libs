@@ -69,7 +69,10 @@ INSTALLED_APPS = [
     'compat',
 
     # django-hijack-admin
-    'hijack_admin'
+    # 'hijack_admin'    # <- not working with django_compressor
+
+    # django_compressor
+    'compressor'
 ]
 
 MIDDLEWARE = [
@@ -152,6 +155,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -167,3 +172,15 @@ HIJACK_USE_BOOTSTRAP = True
 HIJACK_ALLOW_GET_REQUESTS = True
 
 SITE_ID = 1
+
+
+# django_compressor
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_ENABLED = True

@@ -1,7 +1,12 @@
 {% load static %}
 
+<!-- load django_compressor -->
+{% load compress %}
+
 <!-- django-hijack notification bar -->
 {% load hijack_tags %}
+
+<!-- compress inline or linked css and js -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +18,8 @@
     <title>Django App | {% block title %}{% endblock %}</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% compress css %}
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
@@ -22,6 +29,8 @@
     
     <!-- django-hijack notification bar -->
     <link rel="stylesheet" type="text/css" href="{% static 'hijack/hijack-styles.css' %}" />
+
+    {% endcompress %}
   </head>
 
   <body>
@@ -49,6 +58,8 @@
       </div>
       <!-- /Start your project here-->
 
+    {% compress js %}
+
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
@@ -60,7 +71,8 @@
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+
+    {% endcompress %}
 </body>
 
 </html>
-
