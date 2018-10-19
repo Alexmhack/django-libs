@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,6 +32,9 @@ ALLOWED_HOSTS = []
 # django-allauth
 
 AUTHENTICATION_BACKENDS = (
+    # django-axes backend needs to be on top
+    'axes.backends.AxesModelBackend',
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
@@ -72,7 +76,10 @@ INSTALLED_APPS = [
     # 'hijack_admin'    # <- not working with django_compressor
 
     # django_compressor
-    'compressor'
+    'compressor',
+
+    # django-axes
+    'axes',
 ]
 
 MIDDLEWARE = [
@@ -184,3 +191,20 @@ STATICFILES_FINDERS = (
 )
 
 COMPRESS_ENABLED = True
+
+
+# django-axes settings
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'axes_cache': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
+AXES_CACHE = 'axes_cache'
+
+# the warning will go off after 10 seconds
+AXES_COOLOFF_TIME = datetime.timedelta(seconds=10)
