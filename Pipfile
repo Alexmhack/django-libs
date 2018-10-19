@@ -12,6 +12,7 @@ django-hijack-admin = "*"
 django-debug-toolbar = "*"
 django-axes = "*"
 django-compressor = "*"
+django-admin-honeypot = "*"
 
 [dev-packages]
 

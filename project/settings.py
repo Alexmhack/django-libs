@@ -80,6 +80,9 @@ INSTALLED_APPS = [
 
     # django-axes
     'axes',
+
+    # django-admin-honeypot
+    'admin_honeypot',
 ]
 
 MIDDLEWARE = [

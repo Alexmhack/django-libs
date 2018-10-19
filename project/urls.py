@@ -4,7 +4,7 @@ from django.urls import path, include
 from .views import dashboard_view, home_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('this-is-the-admin-site/', admin.site.urls),
     path('', home_view, name='home'),
     path('dashboard/', dashboard_view, name='dashboard'),
 ]
@@ -23,4 +23,9 @@ urlpatterns += [
 # django-hijack urls
 urlpatterns += [
     path('hijack/', include('hijack.urls', namespace='hijack')),
+]
+
+# django-admin-honeypot displaying fake admin login page
+urlpatterns += [
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
 ]
