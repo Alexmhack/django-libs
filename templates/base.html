@@ -1,5 +1,8 @@
 {% load static %}
 
+<!-- django-hijack notification bar -->
+{% load hijack_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +19,14 @@
     <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    
+    <!-- django-hijack notification bar -->
+    <link rel="stylesheet" type="text/css" href="{% static 'hijack/hijack-styles.css' %}" />
   </head>
 
   <body>
+    <!-- django-hijack notification bar -->
+    {% hijack_notification %}
 
     {% if not form %}
       {% include "navbar.html" %}
